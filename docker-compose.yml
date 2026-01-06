@@ -1,0 +1,15 @@
+version: '3'
+services:
+  swift:
+    image: swift_graphics
+    volumes:
+      - ./code:/code
+      - ~/.ssh:/code/.ssh
+      # Mount the host's .gitconfig into the container (to use your Git configuration)
+      - ~/.gitconfig:/code/.gitconfig:ro
+    working_dir: /code
+    command: sleep infinity
+    environment:
+      - GIT_USERNAME=senchaaa
+      - GIT_EMAIL=dan.kotroco.aus@gmail.com
+
